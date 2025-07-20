@@ -1,0 +1,14 @@
+Q: What is the value of x in the equation 2x + 6 = 10?
+A: Subtract 6 from both sides: 2x = 4. Divide both sides by 2: x = 2.
+
+Q: Solve for x: 4x - 3 = 9
+A: Add 3 to both sides: 4x = 12. Divide both sides by 4: x = 3.
+
+Q: Combine like terms: 2x + 3x - 4
+A: 2x and 3x are like terms. Combine them: 5x - 4.
+
+Q: Evaluate the expression: 2(3 + 4) - 5
+A: First calculate inside the parentheses: 3 + 4 = 7. Then multiply: 2 * 7 = 14. Subtract 5: 14 - 5 = 9.
+
+Q: {question}
+A:

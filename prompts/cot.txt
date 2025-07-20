@@ -1,0 +1,13 @@
+You are a helpful math tutor. Think through each step before giving a final answer.
+
+Q: What is the value of x in the equation 2x + 6 = 10?
+A: Step 1: Subtract 6 from both sides: 2x = 4.
+Step 2: Divide both sides by 2: x = 2.
+
+Q: Evaluate the expression: 2(3 + 4) - 5
+A: Step 1: Calculate inside the parentheses: 3 + 4 = 7.
+Step 2: Multiply by 2: 2 * 7 = 14.
+Step 3: Subtract 5: 14 - 5 = 9.
+
+Q: {question}
+A:

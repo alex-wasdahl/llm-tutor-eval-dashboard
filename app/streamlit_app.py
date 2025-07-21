@@ -53,6 +53,28 @@ final_prompt = template.format(question=selected_question)
 
 # --- Display Prompt ---
 st.markdown("### 📝 Prompt Sent to LLM")
+with st.expander("ℹ️ What do these prompt strategies mean?"):
+    st.markdown("""
+    **🔹 Zero-shot Prompting**  
+    The model is given only the user's question — no examples or context.  
+    - **Purpose**: Measures the model’s baseline understanding  
+    - **Example**:  
+      *Q: What is the slope of the line y = 3x + 2?*
+
+    **🔹 Few-shot Prompting**  
+    The model is shown 2–4 examples of Q&A pairs before the target question.  
+    - **Purpose**: Helps guide the model by establishing a pattern or style  
+    - **Strength**: Improves accuracy, consistency, and formatting  
+    - **Limitation**: Can bias the model toward specific answer structures
+
+    **🔹 Chain-of-Thought (CoT) Prompting**  
+    The prompt encourages the model to reason step-by-step before giving a final answer.  
+    - **Purpose**: Promotes logical reasoning and intermediate thinking  
+    - **Best for**: Multi-step math, logic, or explanation-heavy tasks  
+    - **Example**:  
+      *Step 1: Subtract 6 from both sides... Step 2: Divide both sides...*
+    """)
+
 st.code(final_prompt, language="text")
 
 # --- Generate LLM Response ---
@@ -71,7 +93,7 @@ if "response_text" in st.session_state:
     st.markdown("### 📏 Evaluation Metrics")
     
     with st.expander("ℹ️ What do these metrics mean?"):
-    st.markdown("""
+        st.markdown("""
     **🔹 Flesch Reading Ease Score**  
     This score rates text on a 100-point scale; higher scores indicate easier reading.  
     - **90–100**: Very easy (5th grade level)  
@@ -100,7 +122,10 @@ if "response_text" in st.session_state:
     st.write(f"- **Readability (Flesch)**: {flesch_score(response):.2f}")
     st.write(f"- **Coleman-Liau Index**: {coleman_liau_index(response):.2f}")
     st.write(f"- **Word Count**: {word_count(response)}")
-    st.write(f"- **Step Count**: {step_count(response)}")
-
+    if prompt_strategy == "Chain-of-thought": 
+        steps = step_count(response)
+        st.write(f"- **Step Count**: {steps}") 
+    else:
+        st.write("- **Step Count**: N/A (not applicable for this prompt type)")
 st.markdown("---")
 st.caption("Built by Alex Wasdahl — explore how LLMs explain math.")

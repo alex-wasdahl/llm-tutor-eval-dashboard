@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1_3XWlX9QTHwLjZOP8UTDZQ8B1NETYr4X
 """
 
-pip install textstat
+#pip install textstat
 
 import textstat
 def flesch_score(text):

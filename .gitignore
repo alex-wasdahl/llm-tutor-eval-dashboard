@@ -1,0 +1,36 @@
+
+---
+
+### 🧾 `.gitignore` Template
+
+Save as: `llm-tutor-eval-dashboard/.gitignore`
+
+```gitignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# VS Code
+.vscode/
+
+# Environment variables and secrets
+.env
+openai_api_key.txt
+
+# OS files
+.DS_Store
+
+# Streamlit config
+.streamlit/
+
+# Jupyter Notebooks (if used)
+.ipynb_checkpoints/
+
+# Data
+*.csv

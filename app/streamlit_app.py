@@ -69,6 +69,34 @@ if st.button("💬 Generate Response"):
 if "response_text" in st.session_state:
     response = st.session_state["response_text"]
     st.markdown("### 📏 Evaluation Metrics")
+    
+    with st.expander("ℹ️ What do these metrics mean?"):
+    st.markdown("""
+    **🔹 Flesch Reading Ease Score**  
+    This score rates text on a 100-point scale; higher scores indicate easier reading.  
+    - **90–100**: Very easy (5th grade level)  
+    - **60–70**: Standard (8th–9th grade)  
+    - **0–30**: Very difficult (college level and beyond)  
+    This metric is useful for judging how accessible the response is to students.
+
+    **🔹 Coleman-Liau Index**  
+    This index estimates the U.S. school grade level required to understand the text.  
+    - **6–8**: Ideal for middle school students  
+    - **9–10**: High school  
+    - **12+**: College-level  
+    Lower values suggest better alignment with your target student audience.
+
+    **🔹 Word Count**  
+    A basic measure of response length.  
+    - Too few words may indicate oversimplification  
+    - Too many may overwhelm the reader
+
+    **🔹 Step Count**  
+    For chain-of-thought responses, this counts how many discrete steps or reasoning stages the model outputs.  
+    - More steps often reflect more detailed reasoning  
+    - Excessive steps may indicate unnecessary verbosity
+    """)
+
     st.write(f"- **Readability (Flesch)**: {flesch_score(response):.2f}")
     st.write(f"- **Coleman-Liau Index**: {coleman_liau_index(response):.2f}")
     st.write(f"- **Word Count**: {word_count(response)}")

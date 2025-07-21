@@ -18,7 +18,7 @@ st.title("📊 Interactive Tutor Evaluation Dashboard")
 
 # Upload or load questions
 st.sidebar.header("1. Select a Student Question")
-question_df = pd.read_csv("student_questions.csv")
+question_df = pd.read_csv("data/student_questions.csv")
 selected_question = st.sidebar.selectbox("Choose a question", question_df["question_text"].tolist())
 
 # Prompting strategy
